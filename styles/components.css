@@ -1,0 +1,713 @@
+
+/* =========================================
+   MOONLIT - REUSABLE COMPONENTS
+========================================= */
+
+
+/* HEADER */
+
+.game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: .13em;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+.player-info {
+    width: 125px;
+    color: var(--muted);
+    font-size: 9px;
+    text-align: right;
+    letter-spacing: .06em;
+}
+
+.player-xp {
+    height: 5px;
+    margin-top: 4px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #0c111b;
+}
+
+.xp-fill {
+    width: 65%;
+    height: 100%;
+    background: var(--gold);
+    border-radius: inherit;
+}
+
+
+/* RESOURCES */
+
+.resource-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.resource {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    min-height: 36px;
+    padding: 6px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.resource-icon {
+    color: var(--violet);
+}
+
+.resource-icon.gold {
+    color: var(--gold);
+}
+
+.resource-icon.energy {
+    color: var(--mint);
+}
+
+
+/* PANELS */
+
+.panel {
+    padding: 13px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        145deg,
+        var(--panel-light),
+        var(--panel)
+    );
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 11px;
+}
+
+.tag {
+    padding: 4px 7px;
+
+    color: var(--gold);
+    background: #373143;
+
+    border: 1px solid #61506d;
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .06em;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+
+/* BUTTONS */
+
+.primary-button,
+.secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 43px;
+
+    padding: 9px 12px;
+    margin-top: 10px;
+
+    border-radius: 11px;
+
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: .08em;
+
+    text-align: center;
+    user-select: none;
+
+    transition:
+        transform .15s ease,
+        filter .15s ease,
+        background .15s ease;
+}
+
+.primary-button {
+    color: #241e18;
+
+    background: linear-gradient(
+        180deg,
+        #f0d59a,
+        #c69a5e
+    );
+
+    border: 1px solid #f4d9a3;
+}
+
+.secondary-button {
+    color: var(--text);
+    background: #273248;
+    border: 1px solid var(--border);
+}
+
+.primary-button:active,
+.secondary-button:active {
+    transform: scale(.98);
+    filter: brightness(1.12);
+}
+
+
+/* KEYBOARD FOCUS FOR INTERACTIVE LABELS */
+
+#claim-expedition:focus-visible ~ .primary-button,
+#summon-reveal:focus-visible ~ .summon-button {
+    outline: 2px solid var(--mint);
+    outline-offset: 4px;
+}
+
+
+/* PROGRESS BARS */
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+
+    margin: 7px 0;
+
+    background: #101522;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #80cdb8,
+        #c6e5a6
+    );
+}
+
+
+/* EXPEDITION */
+
+.expedition-rewards {
+    margin-top: 9px;
+    font-size: 11px;
+}
+
+
+/* ACTIVITY ROWS */
+
+.activity-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 0;
+
+    border-top: 1px solid var(--border);
+
+    font-size: 11px;
+}
+
+.activity-done {
+    color: var(--mint);
+    font-weight: 900;
+}
+
+.activity-pending {
+    color: var(--gold);
+}
+
+
+/* QUESTS */
+
+.quest-category {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+
+    margin: 10px 0;
+
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.quest-category span {
+    padding: 8px 5px;
+}
+
+.quest-category .category-active {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.quest-item {
+    display: grid;
+    grid-template-columns: 39px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.quest-item:first-of-type {
+    border-top: none;
+}
+
+.quest-icon {
+    display: grid;
+    place-items: center;
+
+    width: 37px;
+    height: 37px;
+
+    background: #303b54;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    color: var(--gold);
+    font-size: 17px;
+}
+
+.quest-information {
+    min-width: 0;
+}
+
+.quest-information strong {
+    display: block;
+    font-size: 11px;
+}
+
+.quest-information span {
+    display: block;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.quest-information small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.quest-information .progress-bar {
+    height: 5px;
+    margin: 5px 0 2px;
+}
+
+.quest-reward {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.milestone-reward {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+    margin-top: 10px;
+
+    background: #202b40;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+}
+
+.milestone-reward > span {
+    color: var(--gold);
+    font-size: 24px;
+}
+
+.milestone-reward strong,
+.milestone-reward small {
+    display: block;
+}
+
+.milestone-reward strong {
+    font-size: 11px;
+}
+
+.milestone-reward small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+
+/* WISH SYSTEM */
+
+.wish-banner {
+    position: relative;
+    min-height: 185px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: end;
+
+    padding: 14px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        140deg,
+        #4c3d70,
+        #292c4b 55%,
+        #1b2c40
+    );
+
+    border: 1px solid #65568a;
+    border-radius: var(--radius-large);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 85%;
+}
+
+.banner-content h2 {
+    margin: 5px 0;
+    font-size: 21px;
+}
+
+.banner-content p {
+    color: #d0d2e4;
+}
+
+.banner-period {
+    display: inline-block;
+    margin-top: 10px;
+
+    padding: 4px 8px;
+
+    color: var(--text);
+    background: #ffffff18;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.rarity-label {
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: .12em;
+}
+
+.pity-information,
+.information-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 0;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.pity-information strong,
+.information-row strong {
+    color: var(--gold);
+}
+
+
+/* SUMMON RESULT */
+
+.summon-result {
+    display: none;
+
+    padding: 15px 10px;
+    margin-top: 12px;
+
+    text-align: center;
+
+    background: #282641;
+    border: 1px solid #8271b4;
+    border-radius: 14px;
+}
+
+.result-stars {
+    color: var(--gold);
+    font-size: 39px;
+}
+
+.result-character {
+    display: grid;
+    place-items: center;
+
+    width: 90px;
+    height: 90px;
+
+    margin: 12px auto;
+
+    color: #e4d6ff;
+    background: linear-gradient(
+        145deg,
+        #7b6baa,
+        #303858
+    );
+
+    border: 2px solid #b9a5ff;
+    border-radius: 22px;
+
+    font-size: 48px;
+}
+
+
+/* TEAM */
+
+.team-power {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .08em;
+}
+
+.team-power strong {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.formation {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.formation-slot {
+    display: grid;
+    place-items: center;
+
+    aspect-ratio: 1;
+
+    background: #303951;
+    border: 1px solid #596783;
+    border-radius: 13px;
+
+    font-size: 24px;
+}
+
+.formation-slot.active {
+    border-color: var(--gold);
+}
+
+.formation-slot.empty {
+    color: var(--muted);
+    border-style: dashed;
+}
+
+
+/* CHARACTER CARDS */
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.character-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 0;
+
+    padding: 10px 6px;
+
+    background: #202a3d;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    text-align: center;
+}
+
+.character-art {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    aspect-ratio: 1 / .8;
+
+    margin-bottom: 8px;
+
+    background: linear-gradient(
+        145deg,
+        #63558b,
+        #28334d
+    );
+
+    border-radius: 10px;
+
+    font-size: 39px;
+}
+
+.character-rarity {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: .1em;
+}
+
+.character-card strong {
+    margin-top: 3px;
+    font-size: 13px;
+}
+
+.character-card small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.character-status {
+    margin-top: 7px;
+
+    color: var(--mint);
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: .08em;
+}
+
+.character-card.legendary {
+    border-color: #b99b62;
+}
+
+.character-card.epic {
+    border-color: #8272b1;
+}
+
+.character-card.locked {
+    opacity: .55;
+}
+
+.character-card.locked .character-art {
+    background: #252c3c;
+}
+
+
+/* FOOTER */
+
+.game-footer {
+    padding: 5px;
+
+    color: #758099;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-align: center;
+}
+
+
+/* EXPEDITION CLAIM INTERACTION */
+
+/*
+   The checkbox must appear before the label and
+   confirmation message in the HTML.
+
+   The general sibling selector then controls
+   the elements following the checkbox.
+*/
+
+#claim-expedition:checked ~ .primary-button {
+    display: none;
+}
+
+#claim-expedition:checked ~ .success-message {
+    display: block;
+}
+
+.success-message {
+    display: none;
+
+    margin-top: 10px;
+
+    color: var(--mint);
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+}
+
+
+/* SUMMON INTERACTION */
+
+#summon-reveal:checked ~ .summon-button {
+    display: none;
+}
+
+#summon-reveal:checked ~ .summon-result {
+    display: block;
+}
+
+
+/* SMALL SCREEN ADJUSTMENTS */
+
+@media (max-width: 340px) {
+
+    .panel {
+        padding: 10px;
+    }
+
+    .quest-item {
+        grid-template-columns: 32px minmax(0, 1fr) auto;
+        gap: 6px;
+    }
+
+    .quest-icon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .quest-reward {
+        font-size: 9px;
+    }
+
+    .character-grid {
+        gap: 6px;
+    }
+
+}

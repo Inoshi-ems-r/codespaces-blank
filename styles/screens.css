@@ -1,0 +1,351 @@
+
+/* =========================================
+   MOONLIT - SCREEN MANAGEMENT
+========================================= */
+
+
+/* SCREEN CONTAINER */
+
+.screens {
+    flex: 1;
+    min-width: 0;
+}
+
+.screen {
+    display: none;
+    min-width: 0;
+    animation: screen-enter .22s ease-out;
+}
+
+
+/* SCREEN SELECTION */
+
+#home-tab:checked ~ .screens .home-screen {
+    display: block;
+}
+
+#quest-tab:checked ~ .screens .quest-screen {
+    display: block;
+}
+
+#wish-tab:checked ~ .screens .wish-screen {
+    display: block;
+}
+
+#team-tab:checked ~ .screens .team-screen {
+    display: block;
+}
+
+
+/* SCREEN HEADINGS */
+
+.screen-heading {
+    padding: 8px 2px 13px;
+}
+
+.screen-heading h1 {
+    margin: 4px 0;
+}
+
+.screen-heading p {
+    max-width: 280px;
+}
+
+
+/* HOME SCREEN */
+
+.hero-banner {
+    position: relative;
+    display: flex;
+    align-items: end;
+
+    min-height: 175px;
+    overflow: hidden;
+
+    padding: 15px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        150deg,
+        #4c4b79,
+        #29334f 65%,
+        #1a293c
+    );
+
+    border: 1px solid #57577f;
+    border-radius: var(--radius-large);
+}
+
+.hero-decoration {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.moon {
+    position: absolute;
+    top: 17px;
+    right: 28px;
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 35% 35%,
+        #fff7df,
+        #e9c98e 60%,
+        #ba936f
+    );
+
+    box-shadow: 0 0 35px #e9c98e55;
+}
+
+.mountain {
+    position: absolute;
+    bottom: -30px;
+    right: -25px;
+
+    width: 85%;
+    height: 95px;
+
+    border-radius: 70% 0 0 0;
+}
+
+.mountain-back {
+    background: #303450;
+    transform: rotate(-9deg);
+}
+
+.mountain-front {
+    right: -55px;
+    bottom: -52px;
+
+    background: #19263a;
+    transform: rotate(5deg);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+}
+
+.hero-content h1 {
+    margin: 6px 0;
+    font-size: 23px;
+}
+
+.hero-content p {
+    color: #d4d9e8;
+}
+
+
+/* EXPEDITION ART */
+
+.expedition-art {
+    display: grid;
+    place-items: center;
+
+    height: 65px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        110deg,
+        #354a58,
+        #39415f,
+        #51466b
+    );
+
+    border: 1px solid #56617b;
+    border-radius: 11px;
+
+    overflow: hidden;
+}
+
+.expedition-art span {
+    color: #f2d8a5;
+    font-size: 28px;
+}
+
+
+/* WISH SCREEN */
+
+.banner-decoration {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.banner-moon {
+    position: absolute;
+    top: 12px;
+    right: 25px;
+
+    width: 92px;
+    height: 92px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 40% 35%,
+        #fff1d2,
+        #c5a5b7 55%,
+        #7c6b9a
+    );
+
+    opacity: .8;
+    box-shadow: 0 0 35px #d5b8e955;
+}
+
+.banner-star {
+    position: absolute;
+    top: 38px;
+    right: 100px;
+
+    color: #fff0ce;
+    font-size: 25px;
+
+    animation: star-glow 3s ease-in-out infinite;
+}
+
+
+/* QUEST SCREEN */
+
+.quest-screen .panel {
+    margin-bottom: 11px;
+}
+
+
+/* TEAM SCREEN */
+
+.team-screen .panel {
+    margin-bottom: 11px;
+}
+
+
+/* BOTTOM NAVIGATION */
+
+.bottom-navigation {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+
+    padding: 7px 0;
+
+    background: var(--background);
+    border-top: 1px solid var(--border);
+}
+
+.bottom-navigation label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 49px;
+
+    gap: 2px;
+
+    color: var(--muted);
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .04em;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+.bottom-navigation label span {
+    font-size: 19px;
+    line-height: 1.1;
+}
+
+
+/* ACTIVE NAVIGATION */
+
+#home-tab:checked ~ .bottom-navigation label[for="home-tab"],
+#quest-tab:checked ~ .bottom-navigation label[for="quest-tab"],
+#wish-tab:checked ~ .bottom-navigation label[for="wish-tab"],
+#team-tab:checked ~ .bottom-navigation label[for="team-tab"] {
+
+    color: var(--gold);
+
+    background: #302d40;
+    border-color: #8b704d;
+}
+
+
+/* KEYBOARD NAVIGATION FOCUS */
+
+#home-tab:focus-visible ~ .bottom-navigation label[for="home-tab"],
+#quest-tab:focus-visible ~ .bottom-navigation label[for="quest-tab"],
+#wish-tab:focus-visible ~ .bottom-navigation label[for="wish-tab"],
+#team-tab:focus-visible ~ .bottom-navigation label[for="team-tab"] {
+
+    outline: 2px solid var(--mint);
+    outline-offset: 3px;
+
+}
+
+.bottom-navigation label:active {
+    transform: scale(.97);
+}
+
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 340px) {
+
+    .hero-banner {
+        min-height: 155px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .wish-banner {
+        min-height: 165px;
+    }
+
+    .bottom-navigation {
+        gap: 4px;
+    }
+
+    .bottom-navigation label {
+        min-height: 44px;
+        font-size: 8px;
+    }
+
+}
+
+@media (max-width: 240px) {
+
+    .bottom-navigation label {
+        font-size: 7px;
+    }
+
+    .resource {
+        font-size: 10px;
+        gap: 3px;
+    }
+
+    .hero-content {
+        max-width: 90%;
+    }
+
+}

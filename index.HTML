@@ -1,0 +1,716 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <meta name="theme-color" content="#10131e">
+    <meta name="description" content="Moonlit - A quiet idle fantasy adventure.">
+
+    <title>Moonlit | Idle Adventure</title>
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/screens.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+
+<body>
+
+<div class="game-shell">
+
+    <!-- GLOBAL HEADER -->
+
+    <header class="game-header">
+
+        <div class="brand">
+            MOON<span>LIT</span>
+        </div>
+
+        <div class="player-info">
+            <span>TRAVELLER LEVEL 08</span>
+            <div class="player-xp">
+                <div class="xp-fill"></div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- RESOURCE DISPLAY -->
+
+    <section class="resource-bar" aria-label="Resources">
+
+        <div class="resource">
+            <span class="resource-icon" aria-hidden="true">✦</span>
+            <span>120</span>
+        </div>
+
+        <div class="resource">
+            <span class="resource-icon gold" aria-hidden="true">◈</span>
+            <span>840</span>
+        </div>
+
+        <div class="resource">
+            <span class="resource-icon energy" aria-hidden="true">ϟ</span>
+            <span>18/20</span>
+        </div>
+
+    </section>
+
+
+    <!-- SCREEN CONTROLS -->
+
+    <input type="radio"
+           name="screen"
+           id="home-tab"
+           checked>
+
+    <input type="radio"
+           name="screen"
+           id="quest-tab">
+
+    <input type="radio"
+           name="screen"
+           id="wish-tab">
+
+    <input type="radio"
+           name="screen"
+           id="team-tab">
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="screens">
+
+
+        <!-- HOME SCREEN -->
+
+        <section class="screen home-screen">
+
+            <div class="hero-banner">
+
+                <div class="hero-decoration" aria-hidden="true">
+                    <div class="moon"></div>
+                    <div class="mountain mountain-back"></div>
+                    <div class="mountain mountain-front"></div>
+                </div>
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        THE QUIET FRONTIER
+                    </span>
+
+                    <h1>
+                        A slower kind<br>
+                        of adventure.
+                    </h1>
+
+                    <p>
+                        Your journey continues beneath the stars.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPEDITION -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Expedition</h2>
+                    <span class="tag">AREA 01</span>
+                </div>
+
+                <div class="expedition-art" aria-hidden="true">
+                    <span>✧</span>
+                </div>
+
+                <div class="row">
+                    <strong>Whispering Meadow</strong>
+                    <span class="muted">64%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill expedition-progress"></div>
+                </div>
+
+                <div class="row expedition-rewards">
+                    <span class="muted">Estimated rewards</span>
+                    <strong>+35 ◈ Gold</strong>
+                </div>
+
+                <!-- Checkbox must precede its controlled elements -->
+
+                <input type="checkbox"
+                       id="claim-expedition"
+                       class="state-input">
+
+                <label for="claim-expedition"
+                       class="primary-button">
+                    COLLECT REWARDS
+                </label>
+
+                <div class="success-message"
+                     role="status">
+                    Rewards collected.
+                </div>
+
+            </section>
+
+
+            <!-- DAILY OVERVIEW -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Daily Activities</h2>
+                    <span class="tag">2 / 3</span>
+                </div>
+
+                <div class="activity-row">
+                    <span>Complete an expedition</span>
+                    <span class="activity-done">✓</span>
+                </div>
+
+                <div class="activity-row">
+                    <span>Visit your companions</span>
+                    <span class="activity-done">✓</span>
+                </div>
+
+                <div class="activity-row">
+                    <span>Make a wish</span>
+                    <span class="activity-pending">○</span>
+                </div>
+
+                <label for="quest-tab"
+                       class="secondary-button">
+                    VIEW ALL QUESTS
+                </label>
+
+            </section>
+
+        </section>
+
+
+        <!-- QUEST SCREEN -->
+
+        <section class="screen quest-screen">
+
+            <div class="screen-heading">
+
+                <span class="eyebrow">
+                    YOUR ADVENTURE
+                </span>
+
+                <h1>Notice Board</h1>
+
+                <p>
+                    Small goals lead to greater adventures.
+                </p>
+
+            </div>
+
+
+            <!-- QUEST CATEGORY: DISPLAY ONLY -->
+
+            <div class="quest-category">
+
+                <span class="category-active">
+                    DAILY
+                </span>
+
+                <span>WEEKLY</span>
+
+                <span>ACHIEVEMENTS</span>
+
+            </div>
+
+
+            <!-- DAILY QUESTS -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Daily Requests</h2>
+                    <span class="tag">RESET DAILY</span>
+                </div>
+
+
+                <div class="quest-item">
+
+                    <div class="quest-icon" aria-hidden="true">⚔</div>
+
+                    <div class="quest-information">
+
+                        <strong>Explore the meadow</strong>
+
+                        <span>Complete one expedition</span>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill"
+                                 style="width:100%"></div>
+                        </div>
+
+                        <small>1 / 1</small>
+
+                    </div>
+
+                    <div class="quest-reward">
+                        +20 ◈
+                    </div>
+
+                </div>
+
+
+                <div class="quest-item">
+
+                    <div class="quest-icon" aria-hidden="true">♙</div>
+
+                    <div class="quest-information">
+
+                        <strong>Visit companions</strong>
+
+                        <span>Check your character collection</span>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill"
+                                 style="width:50%"></div>
+                        </div>
+
+                        <small>1 / 2</small>
+
+                    </div>
+
+                    <div class="quest-reward">
+                        +10 ✦
+                    </div>
+
+                </div>
+
+
+                <div class="quest-item">
+
+                    <div class="quest-icon" aria-hidden="true">✧</div>
+
+                    <div class="quest-information">
+
+                        <strong>A wish upon a star</strong>
+
+                        <span>Visit the summoning banner</span>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill"
+                                 style="width:0%"></div>
+                        </div>
+
+                        <small>0 / 1</small>
+
+                    </div>
+
+                    <div class="quest-reward">
+                        +1 ϟ
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WEEKLY MILESTONE -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Weekly Milestone</h2>
+                    <span class="tag">1 / 5</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                         style="width:20%"></div>
+                </div>
+
+                <p>
+                    Complete five daily requests to receive
+                    your milestone reward.
+                </p>
+
+                <div class="milestone-reward">
+
+                    <span aria-hidden="true">✦</span>
+
+                    <div>
+                        <strong>50 Stardust</strong>
+                        <small>Milestone reward</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- WISH SCREEN -->
+
+        <section class="screen wish-screen">
+
+            <div class="screen-heading">
+
+                <span class="eyebrow">
+                    CELESTIAL SUMMONING
+                </span>
+
+                <h1>Make a Wish</h1>
+
+                <p>
+                    Perhaps someone is waiting beyond the stars.
+                </p>
+
+            </div>
+
+
+            <!-- BANNER -->
+
+            <section class="wish-banner">
+
+                <div class="banner-decoration" aria-hidden="true">
+                    <div class="banner-moon"></div>
+                    <span class="banner-star">✧</span>
+                </div>
+
+                <div class="banner-content">
+
+                    <span class="rarity-label">
+                        LIMITED CHARACTER BANNER
+                    </span>
+
+                    <h2>Echoes of the Moon</h2>
+
+                    <p>
+                        A new companion awaits your arrival.
+                    </p>
+
+                    <span class="banner-period">
+                        FEATURED WISH
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- BANNER DETAILS -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Summoning</h2>
+                    <span class="tag">FEATURED</span>
+                </div>
+
+                <div class="pity-information">
+
+                    <span>5-Star Guarantee</span>
+
+                    <strong>08 / 80</strong>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                         style="width:10%"></div>
+                </div>
+
+                <p>
+                    Your next guaranteed 5-star is
+                    tracked by the pity counter.
+                </p>
+
+
+                <!-- CSS-ONLY SUMMON REVEAL -->
+
+                <input type="checkbox"
+                       id="summon-reveal"
+                       class="state-input">
+
+                <label for="summon-reveal"
+                       class="primary-button summon-button">
+                    ✦ MAKE A WISH
+                </label>
+
+                <div class="summon-result">
+
+                    <div class="result-stars" aria-hidden="true">
+                        ✧
+                    </div>
+
+                    <span class="rarity-label">
+                        FOUR STAR COMPANION
+                    </span>
+
+                    <h2>Luma</h2>
+
+                    <p>Starling Guide</p>
+
+                    <div class="result-character"
+                         aria-hidden="true">
+                        ☾
+                    </div>
+
+                    <label for="summon-reveal"
+                           class="secondary-button">
+                        CLOSE REVEAL
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- BANNER INFORMATION -->
+
+            <section class="panel">
+
+                <h2>Wish Information</h2>
+
+                <div class="information-row">
+                    <span>Featured character</span>
+                    <strong>Luma</strong>
+                </div>
+
+                <div class="information-row">
+                    <span>5-Star guarantee</span>
+                    <strong>80 wishes</strong>
+                </div>
+
+                <div class="information-row">
+                    <span>Current pity</span>
+                    <strong>08 wishes</strong>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- TEAM SCREEN -->
+
+        <section class="screen team-screen">
+
+            <div class="screen-heading">
+
+                <span class="eyebrow">
+                    YOUR COLLECTION
+                </span>
+
+                <h1>Companions</h1>
+
+                <p>
+                    Every journey is better together.
+                </p>
+
+            </div>
+
+
+            <!-- TEAM POWER -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Active Formation</h2>
+                    <span class="tag">3 / 4</span>
+                </div>
+
+                <div class="team-power">
+                    <span>TEAM POWER</span>
+                    <strong>1,240</strong>
+                </div>
+
+                <div class="formation">
+
+                    <div class="formation-slot active">☾</div>
+                    <div class="formation-slot">♜</div>
+                    <div class="formation-slot">✧</div>
+                    <div class="formation-slot empty">+</div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHARACTER COLLECTION -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Character Collection</h2>
+                    <span class="tag">3 CHARACTERS</span>
+                </div>
+
+
+                <div class="character-grid">
+
+                    <article class="character-card legendary">
+
+                        <div class="character-art" aria-hidden="true">
+                            ☾
+                        </div>
+
+                        <span class="character-rarity">
+                            ★★★★
+                        </span>
+
+                        <strong>Luma</strong>
+
+                        <small>Support · Lv. 12</small>
+
+                        <span class="character-status">
+                            ACTIVE
+                        </span>
+
+                    </article>
+
+
+                    <article class="character-card epic">
+
+                        <div class="character-art" aria-hidden="true">
+                            ♜
+                        </div>
+
+                        <span class="character-rarity">
+                            ★★★
+                        </span>
+
+                        <strong>Bran</strong>
+
+                        <small>Defender · Lv. 9</small>
+
+                        <span class="character-status">
+                            ACTIVE
+                        </span>
+
+                    </article>
+
+
+                    <article class="character-card epic">
+
+                        <div class="character-art" aria-hidden="true">
+                            ✧
+                        </div>
+
+                        <span class="character-rarity">
+                            ★★★
+                        </span>
+
+                        <strong>Fenn</strong>
+
+                        <small>Explorer · Lv. 7</small>
+
+                        <span class="character-status">
+                            ACTIVE
+                        </span>
+
+                    </article>
+
+
+                    <article class="character-card locked">
+
+                        <div class="character-art" aria-hidden="true">
+                            ?
+                        </div>
+
+                        <span class="character-rarity">
+                            UNKNOWN
+                        </span>
+
+                        <strong>Unknown</strong>
+
+                        <small>Not discovered</small>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHARACTER PROGRESSION -->
+
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Character Development</h2>
+                </div>
+
+                <div class="information-row">
+                    <span>Selected character</span>
+                    <strong>Luma</strong>
+                </div>
+
+                <div class="information-row">
+                    <span>Current level</span>
+                    <strong>12</strong>
+                </div>
+
+                <div class="information-row">
+                    <span>Character role</span>
+                    <strong>Support</strong>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                         style="width:65%"></div>
+                </div>
+
+                <p>Experience progress: 65%</p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-navigation"
+         aria-label="Main navigation">
+
+        <label for="home-tab">
+            <span aria-hidden="true">⌂</span>
+            HOME
+        </label>
+
+        <label for="quest-tab">
+            <span aria-hidden="true">▤</span>
+            QUESTS
+        </label>
+
+        <label for="wish-tab">
+            <span aria-hidden="true">✧</span>
+            WISH
+        </label>
+
+        <label for="team-tab">
+            <span aria-hidden="true">♙</span>
+            TEAM
+        </label>
+
+    </nav>
+
+
+    <footer class="game-footer">
+        MOONLIT · THE QUIET FRONTIER
+    </footer>
+
+</div>
+
+</body>
+</html>

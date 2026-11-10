@@ -1,0 +1,165 @@
+
+:root {
+    --background: #10131e;
+    --background-light: #171d2c;
+
+    --panel: #1b2333;
+    --panel-light: #242e43;
+
+    --border: #36435b;
+
+    --text: #f2f3fa;
+    --muted: #a2aec4;
+
+    --gold: #eac47f;
+    --gold-dark: #ad8552;
+
+    --mint: #8bd8c1;
+    --violet: #b8a5ff;
+
+    --red: #ef9999;
+
+    --radius-small: 10px;
+    --radius-medium: 15px;
+    --radius-large: 20px;
+
+    --spacing: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+    background: var(--background);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            #28314b 0%,
+            var(--background) 65%
+        );
+
+    color: var(--text);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 14px;
+    line-height: 1.45;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+label {
+    font: inherit;
+    cursor: pointer;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.game-shell {
+    width: min(100%, 430px);
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding:
+        max(12px, env(safe-area-inset-top))
+        12px
+        max(10px, env(safe-area-inset-bottom));
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+h1 {
+    font-size: 25px;
+    line-height: 1.15;
+    font-weight: 750;
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+strong {
+    font-weight: 750;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.eyebrow {
+    color: var(--mint);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+    .game-shell {
+        min-height: min(900px, calc(100vh - 40px));
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        padding: 16px;
+
+        border: 1px solid var(--border);
+        border-radius: 24px;
+
+        background: #141a28;
+    }
+}
+
+@media (max-width: 300px) {
+    .game-shell {
+        padding-left: 7px;
+        padding-right: 7px;
+        gap: 8px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

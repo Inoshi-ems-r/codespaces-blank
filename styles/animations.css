@@ -1,0 +1,159 @@
+
+/* =========================================
+   MOONLIT - ANIMATION SYSTEM
+========================================= */
+
+
+/* SCREEN TRANSITION */
+
+@keyframes screen-enter {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* STAR GLOW */
+
+@keyframes star-glow {
+    0%, 100% {
+        opacity: .55;
+        transform: scale(.9) rotate(-8deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15) rotate(8deg);
+    }
+}
+
+
+/* AMBIENT MOON */
+
+@keyframes moon-breathe {
+    0%, 100% {
+        box-shadow: 0 0 25px #e9c98e44;
+    }
+
+    50% {
+        box-shadow: 0 0 42px #e9c98e88;
+    }
+}
+
+
+/* EXPEDITION PROGRESS */
+
+@keyframes expedition-flow {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100px 0;
+    }
+}
+
+
+/* CHARACTER REVEAL */
+
+@keyframes character-reveal {
+    0% {
+        opacity: 0;
+        transform: scale(.75) translateY(12px);
+    }
+
+    70% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* SUMMON STAR BURST */
+
+@keyframes summon-glow {
+    0%, 100% {
+        filter: brightness(1);
+        text-shadow: 0 0 8px #d8baff55;
+    }
+
+    50% {
+        filter: brightness(1.35);
+        text-shadow: 0 0 25px #d8baffcc;
+    }
+}
+
+
+/* APPLY AMBIENT ANIMATIONS */
+
+.moon {
+    animation: moon-breathe 5s ease-in-out infinite;
+}
+
+.result-stars {
+    animation: summon-glow 2s ease-in-out infinite;
+}
+
+.summon-result {
+    animation: character-reveal .45s ease-out;
+}
+
+
+/* EXPEDITION BAR */
+
+.expedition-progress {
+    background: linear-gradient(
+        90deg,
+        #80cdb8,
+        #d2e5a9,
+        #80cdb8
+    );
+
+    background-size: 200% 100%;
+
+    animation: expedition-flow 5s linear infinite;
+}
+
+
+/* TOUCH FEEDBACK */
+
+@media (hover: hover) {
+    .primary-button:hover {
+        filter: brightness(1.08);
+    }
+
+    .secondary-button:hover {
+        background: #34415a;
+    }
+
+    .character-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-2px);
+    }
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .moon,
+    .banner-star,
+    .result-stars,
+    .expedition-progress {
+        animation: none;
+    }
+
+    .screen {
+        animation: none;
+    }
+}
